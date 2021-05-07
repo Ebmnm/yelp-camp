@@ -54,9 +54,10 @@ app.use(mongoSanitize({
 replaceWith: '_'
 }))
 
+const secret = process.env.SECRET
 const store = MongoStore.create({
 mongoUrl: process.env.DB_URL /* || "mongodb://localhost:27017/yelp-camp" */,
-secret:"thisshouldbeabettersecret",
+secret,
 touchAfter: 24 * 3600 
 })
 store.on("error", function (e) {
@@ -66,7 +67,7 @@ console.log("Session Store Error", e)
 const sessionConfig = {
     store,
 name: "Ses",
-secret: "thisshouldbeabettersecret",
+secret,
 resave: false,
 saveUninitialized: true,
 cookie: {
