@@ -66,7 +66,7 @@ console.log("Session Store Error", e)
 
 const sessionConfig = {
     store,
-name: "Ses",
+name: "Session",
 secret,
 resave: false,
 saveUninitialized: true,
