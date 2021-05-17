@@ -21,7 +21,7 @@ const userRoutes = require("./routes/users")
 const campgroundRoutes = require("./routes/campgrounds")
 const reviewRoutes = require("./routes/reviews")
 const helmet = require("helmet")
-const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp';
 const MongoDBStore = require("connect-mongo").default;
 const { default: MongoStore } = require("connect-mongo");
 
@@ -101,8 +101,8 @@ const styleSrcUrls = [
 "https://use.fontawesome.com/",
 ];
 const connectSrcUrls = [
-"https://api.mapbox.com/",
-"https://a.tiles.mapbox.com/",
+"https://api.mapbox.com",
+"https://*.tiles.mapbox.com/",
 "https://b.tiles.mapbox.com/",
 "https://events.mapbox.com/",
 ];
