@@ -5,7 +5,7 @@ Features
 
 -Search for campgrounds using title, description, or author username
 
--Geocoded campground map
+-Geocoded interactive campground map
 
 -User authorization/authentication using Passport.js
 
